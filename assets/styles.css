@@ -1,0 +1,586 @@
+
+/* ==================================
+   GLOBAL STYLING
+================================== */
+
+:root {
+    --navy: #172554;
+    --navy-light: #263B78;
+    --background: #F4F6FB;
+    --white: #FFFFFF;
+    --text: #202B3C;
+    --muted: #12161c;
+    --border: #E8ECF3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.app-shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+}
+
+
+/* ==================================
+   SIDEBAR
+================================== */
+
+.sidebar {
+    min-height: 100vh;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    padding: 28px 20px;
+    background: linear-gradient(
+        180deg,
+        var(--navy),
+        var(--navy-light)
+    );
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 48px;
+}
+
+.brand-mark {
+    width: 43px;
+    height: 43px;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    background: #7469EF;
+    color: white;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.brand-text h2 {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.brand-text p {
+    margin: 3px 0 0;
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    color: #B9C5E8;
+}
+
+.nav-heading {
+    margin: 0 0 14px 9px;
+    color: #AAB9DF;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1.8px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 13px 12px;
+    border-radius: 10px;
+    color: #D9E2F8;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background: rgba(255,255,255,0.13);
+    color: white;
+}
+
+.nav-number {
+    color: #A4B0D7;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 16px 12px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 12px;
+}
+
+.sidebar-footer p {
+    color: #B9C5E8;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.sidebar-footer h4 {
+    font-size: 13px;
+    margin: 8px 0;
+}
+
+.sidebar-footer small {
+    color: #B9C5E8;
+    font-size: 11px;
+}
+
+
+/* ==================================
+   MAIN CONTENT AND TOPBAR
+================================== */
+
+.main-content {
+    min-width: 0;
+    padding: 0 34px 40px;
+}
+
+.topbar {
+    min-height: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 30px;
+}
+
+.topbar-title p {
+    margin: 0 0 5px;
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 1.6px;
+    font-weight: 700;
+}
+
+.topbar-title h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.topbar-tag {
+    background: #E6F4F3;
+    color: #138C84;
+    padding: 9px 13px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+
+/* ==================================
+   PAGE HEADINGS
+================================== */
+
+.dashboard-page {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.page-heading {
+    padding: 5px 0 5px 19px;
+    border-left: 5px solid var(--accent);
+    margin-bottom: 27px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.page-title {
+    margin: 8px 0;
+    font-size: 29px;
+    font-weight: 750;
+    letter-spacing: -0.6px;
+}
+
+.page-subtitle {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.accent-blue {
+    --accent: #6259D9;
+}
+
+.accent-teal {
+    --accent: #139E93;
+}
+
+.accent-purple {
+    --accent: #A15BD5;
+}
+
+.accent-orange {
+    --accent: #E98B40;
+}
+
+.accent-cyan {
+    --accent: #248DD0;
+}
+
+.accent-navy {
+    --accent: #315B9A;
+}
+
+
+/* ==================================
+   KPI CARDS
+================================== */
+
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+    margin-bottom: 24px;
+}
+
+.metric-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--metric-accent);
+    border-radius: 13px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(30, 50, 90, 0.035);
+}
+
+.metric-blue {
+    --metric-accent: #6259D9;
+}
+
+.metric-purple {
+    --metric-accent: #A15BD5;
+}
+
+.metric-teal {
+    --metric-accent: #139E93;
+}
+
+.metric-orange {
+    --metric-accent: #E98B40;
+}
+
+.metric-label {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.metric-value {
+    margin: 13px 0 8px;
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.metric-description {
+    margin: 0;
+    font-size: 10px;
+    color: var(--muted);
+}
+
+
+/* ==================================
+   CHART CARDS
+================================== */
+
+.chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.chart-card {
+    min-width: 0;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 4px 16px rgba(30, 50, 90, 0.035);
+}
+
+.chart-wide {
+    grid-column: 1 / -1;
+}
+
+
+/* ==================================
+   PLACEHOLDER PAGES
+================================== */
+
+.placeholder-card {
+    background: white;
+    padding: 35px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(30, 50, 90, 0.035);
+}
+
+.placeholder-card h3 {
+    font-size: 19px;
+}
+
+.placeholder-card p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 13px;
+}
+
+
+/* ==================================
+   RESPONSIVE DESIGN
+================================== */
+
+@media (max-width: 1100px) {
+    .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .app-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+        height: auto;
+        min-height: 0;
+    }
+
+    .sidebar-brand {
+        margin-bottom: 25px;
+    }
+
+    .sidebar-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sidebar-footer {
+        margin-top: 25px;
+    }
+
+    .main-content {
+        padding: 0 15px 25px;
+    }
+
+    .topbar {
+        min-height: 75px;
+    }
+
+    .metric-grid,
+    .chart-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-wide {
+        grid-column: auto;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+}
+
+/* ==================================
+   PROFESSIONAL TYPOGRAPHY UPGRADE
+================================== */
+
+body {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #202B3C;
+}
+
+/* Sidebar */
+.brand-text h2 {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.brand-text p {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.nav-heading {
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.sidebar-link {
+    font-size: 14px;
+    font-weight: 650;
+    padding: 14px 12px;
+}
+
+.nav-number {
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.sidebar-footer h4 {
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.sidebar-footer small {
+    font-size: 12px;
+}
+
+/* Top navigation */
+.topbar {
+    min-height: 92px;
+}
+
+.topbar-title h3 {
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.topbar-title p {
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.topbar-tag {
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* Page headings */
+.eyebrow {
+    font-size: 11px;
+    font-weight: 850;
+}
+
+.page-title {
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 850;
+    letter-spacing: -0.9px;
+}
+
+.page-subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 450;
+}
+
+/* KPI cards */
+.metric-card {
+    padding: 23px;
+    border-radius: 15px;
+}
+
+.metric-label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.metric-value {
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 850;
+}
+
+.metric-description {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Charts and filters */
+.chart-card {
+    padding: 15px;
+    border-radius: 16px;
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 18px;
+    margin-bottom: 24px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #E8ECF3;
+    border-radius: 14px;
+}
+
+.filter-control {
+    flex: 1;
+    min-width: 210px;
+}
+
+.filter-label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #334155;
+}
+
+.section-caption {
+    font-size: 17px;
+    font-weight: 800;
+    margin: 8px 0 15px;
+    color: #263449;
+}
+
+/* Placeholder and tables */
+.placeholder-card h3 {
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.placeholder-card p {
+    font-size: 14px;
+}
+
+@media (max-width: 760px) {
+    .page-title {
+        font-size: 27px;
+    }
+
+    .page-subtitle {
+        font-size: 14px;
+    }
+
+    .metric-value {
+        font-size: 26px;
+    }
+
+    .sidebar-link {
+        font-size: 13px;
+    }
+
+    .topbar-title h3 {
+        font-size: 16px;
+    }
+}

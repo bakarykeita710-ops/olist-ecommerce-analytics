@@ -1,0 +1,32 @@
+
+# Virtual environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# Original raw datasets
+Data/Raw/
+
+# Keep only the payment file needed by the dashboard
+Data/Processed/*
+!Data/Processed/payments_cleaned.csv
+
+# Archives and temporary files
+*.7z
+*.zip
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
